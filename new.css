@@ -1,0 +1,510 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: #f8f9fa; /* Light background */
+}
+
+/* Navbar Styling */
+.church-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 60px;
+}
+
+/* Logo Container */
+.church-logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 50px;
+    border-right: 2px solid black;
+    height: 100%;
+}
+
+.church-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.church-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.church-logo span {
+    color: #007bff;
+}
+
+/* Navigation Line */
+.church-nav-line {
+    flex-grow: 1;
+    border-right: 2px solid black;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 20px;
+}
+
+/* Navigation Links */
+.church-nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.church-nav-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+/* Navigation Links Styling */
+.church-nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.9); /* Light background to improve visibility */
+    border-radius: 5px;
+}
+
+.church-nav-links a:hover {
+    color: #007bff;
+    background: rgba(0, 123, 255, 0.1);
+}
+
+/* Buttons */
+.church-nav-buttons {
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Give Button */
+.church-give-btn {
+    background: white;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.church-give-btn:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Plan Your Visit Button */
+.church-visit-btn {
+    background: black;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.church-visit-btn:hover {
+    background: #333;
+}
+
+/* Hamburger Icon */
+.church-hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 1024px) {
+    .church-nav-line {
+        border-right: none;
+    }
+    
+    .church-navbar {
+        padding: 0 15px;
+    }
+
+    .church-logo {
+        padding-right: 15px;
+        border-right: 2px solid black;
+    }
+
+    .church-nav-buttons {
+        gap: 8px;
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .church-nav-links {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+       gap: 20px;
+       margin-top: 1px;
+        left: 0;
+        background: white;
+        width: 100%;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        
+    }
+
+    .church-nav-links.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .church-hamburger {
+        display: block;
+    }
+
+    .church-nav-buttons {
+        display: none;
+    }
+
+    .church-navbar {
+        padding: 0 10px;
+    }
+}
+
+.custom-footer {
+    background: #051B2C;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.custom-invite {
+    background: #F9F6EE;
+    color: #051B2C;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.custom-invite h2 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.custom-invite p {
+    margin: 10px 0;
+}
+
+.custom-invite-btn {
+    background: #00A2FF;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.custom-footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.custom-footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.custom-footer-column h4 {
+    color: #00A2FF;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.custom-footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.custom-footer-column ul li {
+    margin: 5px 0;
+}
+
+.custom-footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.custom-footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.custom-footer-column input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.custom-subscribe-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.custom-subscribe-btn:hover {
+    background: white;
+    color: #051B2C;
+}
+
+.custom-footer-copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .custom-footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .custom-footer-column {
+        min-width: 100%;
+    }
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+.custom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.image-container {
+    flex: 1;
+    padding-right: 30px; /* Space on the left side of the image */
+}
+.text-container {
+    flex: 1;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Gallery Styling */
+.bike-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+    gap: 20px;
+    justify-items: center;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.bike-item {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.bike-item img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.bike-item img:hover {
+    transform: scale(1.1);
+}
+.bike-item {
+    position: relative;
+    display: inline-block;
+}
+
+.bike-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 80%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6); /* Transparent background */
+    color: white;
+    padding: 8px;
+    text-align: center;
+    /* border-radius: 10px; */
+    width: 80%;
+}
+
+.overlay h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.overlay a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.overlay a:hover {
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .overlay {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
+
+.filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.filter-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.filter-buttons button:hover {
+    background-color: #0056b3;
+}
+.bike-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.bike-item {
+    display: block; /* Ensure all images are visible initially */
+    width: 250px;
+    text-align: center;
+}
+.bike-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+.overlay {
+    margin-top: 10px;
+}
+.hidden {
+    display: none !important;
+}
+
+
+
+
+/* Popup overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-overlay img {
+    max-width: 80%;
+    max-height: 80%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Showing the popup when an image is clicked */
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .popup-overlay {
+    display: flex;
+}
+/* Style for the close button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
